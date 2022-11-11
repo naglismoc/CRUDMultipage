@@ -60,7 +60,7 @@ class Hive {
     {       
         $db = new DB();
         $stmt = $db->conn->prepare("UPDATE `hives` SET `model`= ? ,`bee_count`= ? ,`year`= ? WHERE `id` = ?");
-        $stmt->bind_param("siii", $_POST['model'], $_POST['beeCount'], $_POST['year'], $_POST['id']);
+        $stmt->bind_param("siii", $this->model, $this->beeCount, $this->year, $this->id);
         $stmt->execute();
  
         $stmt->close();
