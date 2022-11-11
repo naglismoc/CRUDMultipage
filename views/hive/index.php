@@ -33,14 +33,14 @@ include $_INNER_PATH ."/routes.php";
                             </form>
                         </td>
                         <td>
-                            <form action="<?=$_OUTER_PATH.'/views/hive/edit.php'?>" method="post">
-                                <input type="hidden" name="id" value=" <?=$hive->id?>">
+                            <form action="<?=$_OUTER_PATH.'/views/hive/edit.php'?>" method="get">
+                                <input type="hidden" name="id" value="<?=$hive->id?>">
                                 <button type="submit" name="edit" class="btn btn-success">edit</button>
                             </form>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input type="hidden" name="id" value=" <?=$hive->id?>">
+                                <input type="hidden" name="id" value="<?=$hive->id?>">
                                 <button type="submit" name="destroy" class="btn btn-danger">delete</button>
                             </form>
                         </td>

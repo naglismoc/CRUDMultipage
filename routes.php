@@ -3,7 +3,6 @@
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     
     if(isset($_POST['save'])){
-    
         HiveController::store();
         header("Location: ".$_OUTER_PATH."/views/hive/index.php");
         die;
@@ -21,9 +20,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         die;
     }    
 
-    if(isset($_POST['edit'])){
-        $hive = HiveController::show($_POST['id']);
-    }  
 }
 
 if($_SERVER['REQUEST_METHOD'] == "GET"){
@@ -33,6 +29,10 @@ if($_SERVER['REQUEST_METHOD'] == "GET"){
     if(isset($_GET['show']) ){
         $hive = HiveController::show($_GET['id']);
     }
+    
+    if(isset($_GET['edit'])){
+        $hive = HiveController::show($_GET['id']);
+    }  
 }
 
 
