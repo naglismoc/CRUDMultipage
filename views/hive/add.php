@@ -16,8 +16,8 @@ if(isset($_SESSION['POST'])){
     <form action="" method="post" class="">
 
         <div class="form-group">
-            <label for="f1">Modelis</label>
-            <input type="text" name="model" id="f1" value="<?=($old)? $_SESSION['POST']['model'] : ""?>" class="form-control"">
+            <label for="f1">title</label>
+            <input type="text" name="title" id="f1" value="<?=($old)? $_SESSION['POST']['title'] : ""?>" class="form-control"">
         </div>
         <div class="form-group">
             <label for="f2">bee count</label>
@@ -27,6 +27,14 @@ if(isset($_SESSION['POST'])){
             <label for="f3">year</label>
             <input type="number" name="year" id="f3"  value="<?=($old)? $_SESSION['POST']['year'] : ""?>" class="form-control" ">
         </div>
+        <select class="form-select" name="hiveModel">
+        <option value="">visi</option>
+
+            <?php foreach ($hiveModels as $key => $hm) {?>
+                <option <?= (isset($_GET['filter'])) ? ($_GET['filter'] == $param) ? "selected" : "" : "" ?> value="<?=$hm->id?>"><?=$hm->model?></option>
+            <?php } ?>
+            
+        </select>
         <button type="submit" name="save" class="btn btn-primary mt-3 mb-3">Išsaugoti</button>
 
 </form>

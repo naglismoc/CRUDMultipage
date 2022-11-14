@@ -32,12 +32,13 @@ class HiveController{
             header("Location: "."http://".$_SERVER['SERVER_NAME']."/webdie1020/CRUDMultipage"."/views/hive/edit.php?edit=&id=".$_GET['id']);
             die;
         }
-
+        
        $hive = new Hive();
        $hive->id = $_POST['id'];
-       $hive->model = $_POST['model'];
+       $hive->title = $_POST['title'];
        $hive->beeCount = $_POST['beeCount'];
        $hive->year = $_POST['year'];
+       $hive->modelId = $_POST['hiveModel'];
        $hive->update();
     }
 

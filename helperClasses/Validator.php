@@ -7,7 +7,7 @@ public static function validate()
 {
     $hasErrors = false;     
 
-    if($_POST['model'] == ""){
+    if($_POST['title'] == ""){
         $_SESSION['errors'][] = "Modelis privalo būti nurodytas";
         $hasErrors = true;
     }

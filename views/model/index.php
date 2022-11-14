@@ -10,39 +10,35 @@ include $_INNER_PATH ."/routes.php";
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>title</th>
-                    <th>beeCount</th>
-                    <th>year</th>
                     <th>model</th>
+                    <th>hives made</th>
                     <th>show</th>
                     <th>edit</th>
                     <th>delete</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($hives as $hive) { ?>
+            <tbody>
+                <?php foreach ($hiveModels as $hm) { ?>
                 <tr>
-                        <td> <?=$hive->id?> </td>
-                        <td> <?=$hive->title?> </td>
-                        <td> <?=$hive->beeCount?> </td>
-                        <td> <?=$hive->year?> </td>
-                        <td> <?=$hive->model?> </td>
-
+                        <td> <?=$hm->id?> </td>
+                        <td> <?=$hm->model?> </td>
+                        <td> <?=$hm->hives?> </td>
                         <td>
-                            <form action="<?=$_OUTER_PATH.'/views/hive/show.php'?>" method="get">
-                                <input type="hidden" name="id" value="<?=$hive->id?>">
+                            <form action="<?=$_OUTER_PATH.'/views/model/show.php'?>" method="get">
+                                <input type="hidden" name="id" value="<?=$hm->id?>">
                                 <button type="submit" name="show" class="btn btn-primary">show</button>
                             </form>
                         </td>
                         <td>
-                            <form action="<?=$_OUTER_PATH.'/views/hive/edit.php'?>" method="get">
-                                <input type="hidden" name="id" value="<?=$hive->id?>">
+                            <form action="<?=$_OUTER_PATH.'/views/model/edit.php'?>" method="get">
+                                <input type="hidden" name="id" value="<?=$hm->id?>">
                                 <button type="submit" name="edit" class="btn btn-success">edit</button>
                             </form>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input type="hidden" name="id" value="<?=$hive->id?>">
+                                <input type="hidden" name="id" value="<?=$hm->id?>">
                                 <button type="submit" name="destroy" class="btn btn-danger">delete</button>
                             </form>
                         </td>

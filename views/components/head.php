@@ -3,6 +3,7 @@ session_start();
 $_INNER_PATH = $_SERVER['DOCUMENT_ROOT']."/webdie1020/CRUDMultipage";
 $_OUTER_PATH = "http://".$_SERVER['SERVER_NAME']."/webdie1020/CRUDMultipage";
 
+
 ?>
 
 <!DOCTYPE html>
